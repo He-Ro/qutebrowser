@@ -97,10 +97,8 @@ def get_window(via_ipc, force_window=False, force_tab=False,
 def raise_window(window):
     """Raise the given MainWindow object."""
     window.setWindowState(window.windowState() & ~Qt.WindowMinimized)
-    window.setWindowState(window.windowState() | Qt.WindowActive)
     window.raise_()
     window.activateWindow()
-    QApplication.instance().alert(window)
 
 
 # WORKAROUND for https://github.com/PyCQA/pylint/issues/1770
